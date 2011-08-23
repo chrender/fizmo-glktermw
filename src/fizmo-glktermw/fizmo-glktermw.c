@@ -135,6 +135,6 @@ void glk_main(void)
   glkint_open_interface();
   story_stream = zfile_from_glk_strid(gamefilestream, gamefilename,
       FILETYPE_DATA, FILEACCESS_READ);
-  fizmo_start(story_stream, NULL, NULL);
+  fizmo_start(story_stream, NULL, NULL, -1, -1);
 }
 
