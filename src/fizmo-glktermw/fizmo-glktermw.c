@@ -47,10 +47,10 @@
 #include <interpreter/fizmo.h>
 #include <interpreter/config.h>
 #include <tools/tracelog.h>
+#include <tools/unused.h>
 /*
 #include <interpreter/text.h>
 #include <interpreter/streams.h>
-#include <tools/unused.h>
 #include <tools/types.h>
 #include <tools/i18n.h>
 #include <tools/filesys.h>
@@ -117,9 +117,9 @@ int glkunix_startup_code(glkunix_startup_t *data)
 }
 
 
-int glk_ask_user_for_file(zscii *filename_buffer, int buffer_len,
-    int preload_len, int filetype, int fileaccess,
-    z_file **result_file, char *directory)
+int glk_ask_user_for_file(zscii *UNUSED(filename_buffer),
+    int UNUSED(buffer_len), int UNUSED(preload_len), int filetype,
+    int fileaccess, z_file **result_file, char *UNUSED(directory))
 {
   frefid_t fileref = NULL;
   glui32 usage, fmode;
