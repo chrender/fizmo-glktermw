@@ -29,13 +29,6 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/*
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <dirent.h>
-#include <strings.h>
-*/
 
 #include "glk.h"
 #include "glk_interface/glk_interface.h"
@@ -48,13 +41,6 @@
 #include <interpreter/config.h>
 #include <tools/tracelog.h>
 #include <tools/unused.h>
-/*
-#include <interpreter/text.h>
-#include <interpreter/streams.h>
-#include <tools/types.h>
-#include <tools/i18n.h>
-#include <tools/filesys.h>
-*/
 
 static char *init_err = NULL; /*### use this */
 static char *init_err2 = NULL; /*### use this */
