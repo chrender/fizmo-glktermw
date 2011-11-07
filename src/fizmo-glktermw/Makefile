@@ -19,7 +19,7 @@ LIBS += -lglkif -lglktermw
 
 
 fizmo-glktermw: fizmo-glktermw.o
-	$(CC) $(CFLAGS) fizmo-glktermw.o -o fizmo-glktermw $(LIBS)
+	$(CC) $(LDFLAGS) fizmo-glktermw.o -o fizmo-glktermw $(LIBS)
 	#strip fizmo
 
 fizmo-glktermw.o: fizmo-glktermw.c
