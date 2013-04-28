@@ -135,7 +135,7 @@ void glk_main(void)
   story_stream = glkint_open_interface(&glkunix_open_game_stream);
   if (!story_stream)
     return;
-  fizmo_start(story_stream, NULL, NULL, -1, -1);
+  fizmo_start(story_stream, NULL, NULL);
 
 #ifdef ENABLE_TRACING
   turn_off_trace();

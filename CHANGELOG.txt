@@ -1,4 +1,7 @@
 
+   Version 0.1.5
+ - Adapted to new libfizmo function calls.
+
    Version 0.1.4
  + 0.1.4 was finished at about Mon Sep 17 22:14:52 CEST 2012.
  - Adapted to new autoconf/automake build process.
