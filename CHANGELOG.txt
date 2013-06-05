@@ -1,5 +1,6 @@
 
    Version 0.1.5
+ + 0.1.5 was finished at about Wed Jun 5 18:49:00 CEST 2013.
  - Adapted to new libfizmo function calls.
 
    Version 0.1.4
