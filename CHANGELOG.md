@@ -42,6 +42,6 @@
    **Version 0.1.0 —  18, 2011**
 
  - fizmo-glktermw is an example how to use the libglkif module to implement a GLK-based frontend, in this case using glktermw. Please note that version 0.1.0 should be still considered quite experimental.
- - This interface was built from code in Andrew Plotkin's github repository. Please note that bug reports should be sent to [mailto:fizmo@spellbreaker.org](mailto:fizmo@spellbreaker.org) instead of sending them to Andrew Plotkin.
+ - This interface was built from code in Andrew Plotkin's github repository. Please note that bug reports should be sent to  instead of sending them to Andrew Plotkin.
 
 
