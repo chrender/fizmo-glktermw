@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.1.6**
+
+ - Added missing license/copyright information.
+
+---
+
+
    **Version 0.1.5 —  5, 2013**
 
  - Adapted to new libfizmo function calls.
