@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.1.6">
+    <datetime day-of-week="Mon" month="3" day="3" hour="21"
+      minute="50" second="0" timezone="CET" year="2014"/>
     <logentry>Added missing license/copyright information.</logentry>
   </change>
 
   <change version="0.1.5">
-    <datetime day-of-week="Wed" month="Jun" day="5" hour="18"
+    <datetime day-of-week="Wed" month="6" day="5" hour="18"
       minute="49" second="00" timezone="CEST" year="2013"/>
     <logentry>Adapted to new libfizmo function calls.</logentry>
   </change>
 
   <change version="0.1.4">
-    <datetime day-of-week="Mon" month="Sep" day="17" hour="22"
+    <datetime day-of-week="Mon" month="9" day="17" hour="22"
       minute="14" second="52" timezone="CEST" year="2012"/>
     <logentry>Adapted to new autoconf/automake build process.</logentry>
   </change>
 
   <change version="0.1.3">
-    <datetime day-of-week="Wed" month="Aug" day="1" hour="21"
+    <datetime day-of-week="Wed" month="8" day="1" hour="21"
       minute="42" second="17" timezone="CEST" year="2012"/>
     <logentry>Merged with Andrew Plotkin's iOS-fizmo implementation: Moved functionality of “glk_ask_user_for_file” into libglkif.</logentry>
   </change>
 
   <change version="0.1.2">
-    <datetime day-of-week="Fri" month="Mar" day="9" hour="21"
+    <datetime day-of-week="Fri" month="3" day="9" hour="21"
       minute="01" second="12" timezone="CET" year="2012"/>
     <logentry>Fixed missing $(DESTDIR) variable – should already have been present since version 0.1.1.</logentry>
   </change>
 
   <change version="0.1.1">
-    <datetime day-of-week="Sun" month="Nov" day="6" hour="22"
+    <datetime day-of-week="Sun" month="11" day="6" hour="22"
       minute="44" second="17" timezone="CET" year="2011"/>
     <logentry>Fixed missing “override” statments for CFLAGS in Makefiles.</logentry>
     <logentry>Fixed $(DESTDIR) evaluation in config.[default|macports].mk.</logentry>
@@ -38,7 +40,7 @@
   </change>
 
   <change version="0.1.0">
-    <datetime day-of-week="Sun" month="Sep" day="18" hour="08"
+    <datetime day-of-week="Sun" month="9" day="18" hour="08"
       minute="41" second="18" timezone="CEST" year="2011"/>
     <logentry>fizmo-glktermw is an example how to use the libglkif module to implement a GLK-based frontend, in this case using glktermw. Please note that version 0.1.0 should be still considered quite experimental.</logentry>
     <logentry>This interface was built from code in Andrew Plotkin's github repository. Please note that bug reports should be sent to <a href="mailto:fizmo@spellbreaker.org"/> instead of sending them to Andrew Plotkin.</logentry>
