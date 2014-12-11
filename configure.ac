@@ -35,7 +35,11 @@ AC_ARG_ENABLE([tracing],
  [],
  [enable_tracing=no])
 
-AC_INIT([fizmo-glktermw], [0.1.6])
+AC_INIT(
+ [fizmo-glktermw],
+ [0.1.7],
+ fizmo@spellbreaker.org,
+ fizmo-glktermw)
 
 AC_CONFIG_AUX_DIR([.])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
