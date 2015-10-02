@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.1.7**
+
+ - Minor autoconf-related changes for fizmo-dist-0.7.10-compatibility.
+
+---
+
+
    **Version 0.1.6 — March 19, 2014**
 
  - Added missing license/copyright information.
