@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.1.8 — October 16, 2015**
+
+ - Minor adaptations due to libglkif version 0.1.9.
+
+---
+
+
    **Version 0.1.7 — October 9, 2015**
 
  - Minor autoconf-related changes for fizmo-dist-0.7.10-compatibility.
