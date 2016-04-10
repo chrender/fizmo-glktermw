@@ -3,7 +3,7 @@
 #
 # This file is part of fizmo.
 #
-# Copyright (c) 2009-2015 Christoph Ender.
+# Copyright (c) 2009-2016 Christoph Ender.
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-AM_CFLAGS = $(libfizmo_CFLAGS) $(libglkif_CFLAGS) $(ncursesw_CFLAGS) $(LIBNCURSESW_NONPKG_CFLAGS)
+AM_CFLAGS = $(libfizmo_CFLAGS) $(libglkif_CFLAGS) $(ncursesw_CFLAGS) $(LIBNCURSESW_NONPKG_CFLAGS) $(GLKTERMW_NONPKG_CFLAGS)
 AM_CPPFLAGS =
-LDADD = $(libfizmo_LIBS) $(libglkif_LIBS) $(ncursesw_LIBS) $(LIBNCURSESW_NONPKG_LIBS)
+LDADD = $(libfizmo_LIBS) $(libglkif_LIBS) $(ncursesw_LIBS) $(LIBNCURSESW_NONPKG_LIBS) $(GLKTERMW_NONPKG_LIBS)
 
 bin_PROGRAMS = fizmo-glktermw
 fizmo_glktermw_SOURCES = fizmo-glktermw.c

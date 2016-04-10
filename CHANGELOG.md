@@ -1,6 +1,13 @@
 
 
 
+   **Version 0.2.0**
+
+ - Adaptations for libglkif version 0.2.0: Separate glk and glktermw from each other.
+
+---
+
+
    **Version 0.1.8 — October 16, 2015**
 
  - Minor adaptations due to libglkif version 0.1.9.
