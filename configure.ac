@@ -37,7 +37,7 @@ AC_ARG_ENABLE([tracing],
 
 AC_INIT(
  [fizmo-glktermw],
- [0.2.0],
+ [0.2.1],
  fizmo@spellbreaker.org,
  fizmo-glktermw)
 

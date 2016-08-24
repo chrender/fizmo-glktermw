@@ -1,7 +1,14 @@
 
 
 
-   **Version 0.2.0**
+   **Version 0.2.1**
+
+ - Use tiny-xml-doc-tools for documentation.
+
+---
+
+
+   **Version 0.2.0 — April 10, 2016**
 
  - Adaptations for libglkif version 0.2.0: Separate glk and glktermw from each other.
 

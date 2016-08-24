@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+  <change version="0.2.1">
+    <logentry>Use tiny-xml-doc-tools for documentation.</logentry>
+  </change>
+
   <change version="0.2.0">
+    <datetime day-of-week="Sun" month="4" day="10" hour="14"
+      minute="45" second="7" timezone="CEST" year="2016"/>
     <logentry>Adaptations for libglkif version 0.2.0: Separate glk and glktermw from each other.</logentry>
   </change>
 
