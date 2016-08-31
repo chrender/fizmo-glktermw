@@ -46,8 +46,8 @@ AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AC_PROG_CC
 AC_PROG_RANLIB
 
-PKG_CHECK_MODULES([libfizmo], [libfizmo >= 0.7.11])
-PKG_CHECK_MODULES([libglkif], [libglkif >= 0.2.0])
+PKG_CHECK_MODULES([libfizmo], [libfizmo >= 0.7.12])
+PKG_CHECK_MODULES([libglkif], [libglkif >= 0.2.1])
 m4_include(config-libs.m4)
 
 AM_CONDITIONAL([ENABLE_TRACING],

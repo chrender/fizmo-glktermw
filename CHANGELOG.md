@@ -1,7 +1,7 @@
 
 
 
-   **Version 0.2.1**
+   **Version 0.2.1 — August 31, 2016**
 
  - Use tiny-xml-doc-tools for documentation.
 
