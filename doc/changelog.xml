@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
+  <change version="0.2.2">
+    <datetime day-of-week="Mon" month="8" day="15" hour="22"
+      minute="58" second="21" timezone="CEST" year="2017"/>
+    <logentry>Adapted to LICENSE file.</logentry>
+  </change>
+
   <change version="0.2.1">
     <datetime day-of-week="Wed" month="8" day="31" hour="22"
       minute="8" second="50" timezone="CEST" year="2016"/>

@@ -3,7 +3,7 @@
 #
 # This file is part of fizmo.
 #
-# Copyright (c) 2009-2016 Christoph Ender.
+# Copyright (c) 2009-2017 Christoph Ender.
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -37,7 +37,7 @@ AC_ARG_ENABLE([tracing],
 
 AC_INIT(
  [fizmo-glktermw],
- [0.2.1],
+ [0.2.2],
  fizmo@spellbreaker.org,
  fizmo-glktermw)
 
@@ -46,8 +46,8 @@ AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AC_PROG_CC
 AC_PROG_RANLIB
 
-PKG_CHECK_MODULES([libfizmo], [libfizmo >= 0.7.12])
-PKG_CHECK_MODULES([libglkif], [libglkif >= 0.2.1])
+PKG_CHECK_MODULES([libfizmo], [libfizmo >= 0.7.15])
+PKG_CHECK_MODULES([libglkif], [libglkif >= 0.2.4])
 m4_include(config-libs.m4)
 
 AM_CONDITIONAL([ENABLE_TRACING],
