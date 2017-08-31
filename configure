@@ -703,6 +703,7 @@ infodir
 docdir
 oldincludedir
 includedir
+runstatedir
 localstatedir
 sharedstatedir
 sysconfdir
@@ -785,6 +786,7 @@ datadir='${datarootdir}'
 sysconfdir='${prefix}/etc'
 sharedstatedir='${prefix}/com'
 localstatedir='${prefix}/var'
+runstatedir='${localstatedir}/run'
 includedir='${prefix}/include'
 oldincludedir='/usr/include'
 docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
@@ -1037,6 +1039,15 @@ do
   | -silent | --silent | --silen | --sile | --sil)
     silent=yes ;;
 
+  -runstatedir | --runstatedir | --runstatedi | --runstated \
+  | --runstate | --runstat | --runsta | --runst | --runs \
+  | --run | --ru | --r)
+    ac_prev=runstatedir ;;
+  -runstatedir=* | --runstatedir=* | --runstatedi=* | --runstated=* \
+  | --runstate=* | --runstat=* | --runsta=* | --runst=* | --runs=* \
+  | --run=* | --ru=* | --r=*)
+    runstatedir=$ac_optarg ;;
+
   -sbindir | --sbindir | --sbindi | --sbind | --sbin | --sbi | --sb)
     ac_prev=sbindir ;;
   -sbindir=* | --sbindir=* | --sbindi=* | --sbind=* | --sbin=* \
@@ -1174,7 +1185,7 @@ fi
 for ac_var in	exec_prefix prefix bindir sbindir libexecdir datarootdir \
 		datadir sysconfdir sharedstatedir localstatedir includedir \
 		oldincludedir docdir infodir htmldir dvidir pdfdir psdir \
-		libdir localedir mandir
+		libdir localedir mandir runstatedir
 do
   eval ac_val=\$$ac_var
   # Remove trailing slashes.
@@ -1327,6 +1338,7 @@ Fine tuning of the installation directories:
   --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
   --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
   --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
+  --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
   --libdir=DIR            object code libraries [EPREFIX/lib]
   --includedir=DIR        C header files [PREFIX/include]
   --oldincludedir=DIR     C header files for non-gcc [/usr/include]
@@ -3975,8 +3987,8 @@ $as_echo "no" >&6; }
 fi
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libfizmo >= 0.7.15" >&5
-$as_echo_n "checking for libfizmo >= 0.7.15... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libfizmo" >&5
+$as_echo_n "checking for libfizmo... " >&6; }
 
 if test -n "$libfizmo_CFLAGS"; then
     pkg_cv_libfizmo_CFLAGS="$libfizmo_CFLAGS"
@@ -4016,7 +4028,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -4043,7 +4055,7 @@ Alternatively, you may set the environment variables libfizmo_CFLAGS
 and libfizmo_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -4066,8 +4078,8 @@ $as_echo "yes" >&6; }
 fi
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libglkif >= 0.2.4" >&5
-$as_echo_n "checking for libglkif >= 0.2.4... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libglkif" >&5
+$as_echo_n "checking for libglkif... " >&6; }
 
 if test -n "$libglkif_CFLAGS"; then
     pkg_cv_libglkif_CFLAGS="$libglkif_CFLAGS"
@@ -4107,7 +4119,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -4134,7 +4146,7 @@ Alternatively, you may set the environment variables libglkif_CFLAGS
 and libglkif_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -4203,7 +4215,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -4220,8 +4232,8 @@ fi
 	echo "$ncursesw_PKG_ERRORS" >&5
 
 	for dir in $with_ncurses_includedir /usr/include /usr/local/include /opt/local/include ; do
-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $dir/ncurses.h" >&5
-$as_echo_n "checking for $dir/ncurses.h... " >&6; }
+    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ncurses.h in $dir" >&5
+$as_echo_n "checking for ncurses.h in $dir... " >&6; }
     if  test -e $dir/ncurses.h ; then
       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }
@@ -4323,11 +4335,11 @@ rm -f core conftest.err conftest.$ac_objext \
   LDFLAGS=$LDFLAGS_SAVED
 
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	for dir in $with_ncurses_includedir /usr/include /usr/local/include /opt/local/include ; do
-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $dir/ncurses.h" >&5
-$as_echo_n "checking for $dir/ncurses.h... " >&6; }
+    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ncurses.h in $dir" >&5
+$as_echo_n "checking for ncurses.h in $dir... " >&6; }
     if  test -e $dir/ncurses.h ; then
       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }
@@ -4833,14 +4845,14 @@ fi
 done
 
 
-ac_fn_c_check_header_mongrel "$LINENO" "glkterm.h" "ac_cv_header_glkterm_h" "$ac_includes_default"
-if test "x$ac_cv_header_glkterm_h" = xyes; then :
+ac_fn_c_check_header_mongrel "$LINENO" "glk.h" "ac_cv_header_glk_h" "$ac_includes_default"
+if test "x$ac_cv_header_glk_h" = xyes; then :
 
 else
-  for dir in $with_glktermw_includedir /usr/include /usr/local/include ; do
-     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $dir/glkterm.h" >&5
-$as_echo_n "checking for $dir/glkterm.h... " >&6; }
-     if  test -e $dir/glkterm.h ; then
+  for dir in $with_glktermw_includedir /usr/include /usr/include/glktermw /usr/local/include /usr/local/include/glktermw ; do
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for glk.h in $dir" >&5
+$as_echo_n "checking for glk.h in $dir... " >&6; }
+     if  test -e $dir/glk.h ; then
        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }
        glkterm_h_dir=$dir
@@ -4851,7 +4863,7 @@ $as_echo "no" >&6; }
      fi
    done
    if  test "x$glkterm_h_dir" == "x" ; then
-     echo "Could not find glkterm.h."
+     echo "Could not find glk.h."
      echo "Try setting the location using --with-glktermw-includedir."
      as_fn_exit $?
    fi
@@ -4908,8 +4920,8 @@ $as_echo_n "checking for libglktermw in $dir... " >&6; }
 /* end confdefs.h.  */
 
           #include <stdio.h>
-          #include "$glk_h_dir/glk.h"
-          #include "$glk_h_dir/glkstart.h"
+          #include "$glkterm_h_dir/glk.h"
+          #include "$glkterm_h_dir/glkstart.h"
           glkunix_argumentlist_t glkunix_arguments[] = { };
           int glkunix_startup_code(glkunix_startup_t *data) { }
           void glk_main(void) { glk_exit(); }
