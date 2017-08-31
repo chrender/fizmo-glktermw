@@ -7,7 +7,7 @@ PKG_CHECK_MODULES(
   [ncursesw],
   ,
   [for dir in $with_ncurses_includedir /usr/include /usr/local/include /opt/local/include ; do
-    AC_MSG_CHECKING(for $dir/ncurses.h)
+    AC_MSG_CHECKING(for ncurses.h in $dir)
     if [ test -e $dir/ncurses.h ]; then
       AC_MSG_RESULT(yes)
       ncurses_h_dir=$dir
@@ -75,11 +75,11 @@ PKG_CHECK_MODULES(
   LDFLAGS=$LDFLAGS_SAVED
 ])
 
-AC_CHECK_HEADER([glkterm.h],
+AC_CHECK_HEADER([glk.h],
   [],
-  [for dir in $with_glktermw_includedir /usr/include /usr/local/include ; do
-     AC_MSG_CHECKING(for $dir/glkterm.h)
-     if [ test -e $dir/glkterm.h ]; then
+  [for dir in $with_glktermw_includedir /usr/include /usr/include/glktermw /usr/local/include /usr/local/include/glktermw ; do
+     AC_MSG_CHECKING(for glk.h in $dir)
+     if [ test -e $dir/glk.h ]; then
        AC_MSG_RESULT(yes)
        glkterm_h_dir=$dir
        break
@@ -88,7 +88,7 @@ AC_CHECK_HEADER([glkterm.h],
      fi
    done
    if [ test "x$glkterm_h_dir" == "x"] ; then
-     echo "Could not find glkterm.h."
+     echo "Could not find glk.h."
      echo "Try setting the location using --with-glktermw-includedir."
      AS_EXIT
    fi
@@ -106,8 +106,8 @@ AC_CHECK_LIB([glktermw],
        [AC_LANG_SOURCE(
         [[
           #include <stdio.h>
-          #include "$glk_h_dir/glk.h"
-          #include "$glk_h_dir/glkstart.h"
+          #include "$glkterm_h_dir/glk.h"
+          #include "$glkterm_h_dir/glkstart.h"
           glkunix_argumentlist_t glkunix_arguments[] = { };
           int glkunix_startup_code(glkunix_startup_t *data) { }
           void glk_main(void) { glk_exit(); } ]])],
