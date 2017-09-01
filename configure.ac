@@ -50,6 +50,9 @@ PKG_CHECK_MODULES([libfizmo], [libfizmo >= 0.7.15])
 PKG_CHECK_MODULES([libglkif], [libglkif >= 0.2.4])
 m4_include(config-libs.m4)
 
+AC_SUBST([GLKTERMW_NONPKG_CFLAGS], $glktermw_nonpkg_cflags)
+AC_SUBST([GLKTERMW_NONPKG_LIBS], $glktermw_nonpkg_libs)
+
 AM_CONDITIONAL([ENABLE_TRACING],
                 [test "$enable_tracing" = "yes"])
 
