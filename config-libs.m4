@@ -92,25 +92,22 @@ AC_CHECK_HEADER([glk.h],
      echo "Try setting the location using --with-glktermw-includedir."
      AS_EXIT
    fi
-   glktermw_nonpkg_cflags+=" -I$glkterm_h_dir"])
+   glktermw_nonpkg_cflags+=" -I$glkterm_h_dir"
 
-AC_CHECK_LIB([glktermw],
-  [main],
-  [],
-  [LIBS_OLD=$LIBS
-   LIBS="-lglktermw -L$glktermw_nonpkg_libs"
+   CFLAGS_SAVED=$CFLAGS
+   LIBS_SAVED=$LIBS
+   LDFLAGS_SAVED=$LDFLAGS
+   LIBS="-lglktermw"
    for dir in $with_glktermw_libdir /usr/lib /usr/local/lib ; do
      AC_MSG_CHECKING(for libglktermw in $dir)
      LDFLAGS="-L$dir"
-     AC_LINK_IFELSE(
-       [AC_LANG_SOURCE(
-        [[
-          #include <stdio.h>
-          #include "$glkterm_h_dir/glk.h"
-          #include "$glkterm_h_dir/glkstart.h"
-          glkunix_argumentlist_t glkunix_arguments[] = { };
-          int glkunix_startup_code(glkunix_startup_t *data) { }
-          void glk_main(void) { glk_exit(); } ]])],
+     AC_TRY_LINK(
+       [#include <stdio.h>
+        #include "$glkterm_h_dir/glk.h"
+        #include "$glkterm_h_dir/glkstart.h"],
+       [glkunix_argumentlist_t glkunix_arguments[] = { };
+        int glkunix_startup_code(glkunix_startup_t *data) { }
+        void glk_main(void) { glk_exit(); } ],
        [AC_MSG_RESULT(yes)
         glktermw_l_dir=$dir
         break],
@@ -119,11 +116,11 @@ AC_CHECK_LIB([glktermw],
    if [ test "x$glktermw_l_dir" == "x"] ; then
      echo "Could not find libglktermw."
      echo "Try setting the location using --with-glktermw-libdir."
-     AC_MSG_ERROR([Could not find libglktermw.])
-     AC_MSG_ERROR([You need to specify libglktermw.a location using "--with-glktermw-libdir=<path>".])
-     AS_EXIT
+     exit
    fi
-   LIBS=$LIBS_OLD
-   glktermw_nonpkg_libs+=" -L$glktermw_l_dir -lglktermw"
-])
+   LIBS=$LIBS_SAVED
+   LDFLAGS=$LDFLAGS_SAVED
+   CFLAGS=$CFLAGS_SAVED
+   glktermw_nonpkg_libs="-L$glkterm_h_dir -lglktermw"
+   libglktermw_LIBS="-L$glktermw_l_dir -lglktermw"])
 
