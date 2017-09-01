@@ -4868,63 +4868,29 @@ $as_echo "no" >&6; }
      as_fn_exit $?
    fi
    glktermw_nonpkg_cflags+=" -I$glkterm_h_dir"
-fi
 
-
-
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lglktermw" >&5
-$as_echo_n "checking for main in -lglktermw... " >&6; }
-if ${ac_cv_lib_glktermw_main+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  ac_check_lib_save_LIBS=$LIBS
-LIBS="-lglktermw  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-
-int
-main ()
-{
-return main ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"; then :
-  ac_cv_lib_glktermw_main=yes
-else
-  ac_cv_lib_glktermw_main=no
-fi
-rm -f core conftest.err conftest.$ac_objext \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_glktermw_main" >&5
-$as_echo "$ac_cv_lib_glktermw_main" >&6; }
-if test "x$ac_cv_lib_glktermw_main" = xyes; then :
-  cat >>confdefs.h <<_ACEOF
-#define HAVE_LIBGLKTERMW 1
-_ACEOF
-
-  LIBS="-lglktermw $LIBS"
-
-else
-  LIBS_OLD=$LIBS
-   LIBS="-lglktermw -L$glktermw_nonpkg_libs"
+   CFLAGS_SAVED=$CFLAGS
+   LIBS_SAVED=$LIBS
+   LDFLAGS_SAVED=$LDFLAGS
+   LIBS="-lglktermw"
    for dir in $with_glktermw_libdir /usr/lib /usr/local/lib ; do
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libglktermw in $dir" >&5
 $as_echo_n "checking for libglktermw in $dir... " >&6; }
      LDFLAGS="-L$dir"
      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-
-          #include <stdio.h>
-          #include "$glkterm_h_dir/glk.h"
-          #include "$glkterm_h_dir/glkstart.h"
-          glkunix_argumentlist_t glkunix_arguments[] = { };
-          int glkunix_startup_code(glkunix_startup_t *data) { }
-          void glk_main(void) { glk_exit(); }
+#include <stdio.h>
+        #include "$glkterm_h_dir/glk.h"
+        #include "$glkterm_h_dir/glkstart.h"
+int
+main ()
+{
+glkunix_argumentlist_t glkunix_arguments[] = { };
+        int glkunix_startup_code(glkunix_startup_t *data) { }
+        void glk_main(void) { glk_exit(); }
+  ;
+  return 0;
+}
 _ACEOF
 if ac_fn_c_try_link "$LINENO"; then :
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
@@ -4941,14 +4907,15 @@ rm -f core conftest.err conftest.$ac_objext \
    if  test "x$glktermw_l_dir" == "x" ; then
      echo "Could not find libglktermw."
      echo "Try setting the location using --with-glktermw-libdir."
-     as_fn_error $? "Could not find libglktermw." "$LINENO" 5
-     as_fn_error $? "You need to specify libglktermw.a location using \"--with-glktermw-libdir=<path>\"." "$LINENO" 5
-     as_fn_exit $?
+     exit
    fi
-   LIBS=$LIBS_OLD
-   glktermw_nonpkg_libs+=" -L$glktermw_l_dir -lglktermw"
-
+   LIBS=$LIBS_SAVED
+   LDFLAGS=$LDFLAGS_SAVED
+   CFLAGS=$CFLAGS_SAVED
+   glktermw_nonpkg_libs="-L$glkterm_h_dir -lglktermw"
+   libglktermw_LIBS="-L$glktermw_l_dir -lglktermw"
 fi
+
 
 
 
