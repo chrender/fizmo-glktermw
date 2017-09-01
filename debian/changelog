@@ -1,0 +1,6 @@
+fizmo-glktermw (0.2.2-1) experimental; urgency=low
+
+  * Initial stand-alone packaging for fizmo-glktermw (Closes: #0).
+
+ -- Christoph Ender <christoph.ender@spellbreaker.org>  Fri, 1 Sep 2017 16:30:00 +0200
+

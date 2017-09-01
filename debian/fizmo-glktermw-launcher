@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -t 0 ]; then
+    fizmo-glktermw "$@"
+else
+    x-terminal-emulator -e fizmo-glktermw "$@"
+fi

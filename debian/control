@@ -1,0 +1,28 @@
+Source: fizmo-glktermw
+Section: games
+Priority: extra
+Maintainer: Christoph Ender <christoph.ender@spellbreaker.org>
+Build-Depends: debhelper (>= 9.0.0),
+ dpkg-dev (>= 1.16.1~),
+ dh-autoreconf,
+ automake,
+ autoconf,
+ pkg-config,
+ libfizmo-dev,
+ libglkif-dev,
+ glktermw-dev
+Standards-Version: 4.0.0
+Homepage: https://fizmo.spellbreaker.org/
+
+Package: fizmo-glktermw
+Architecture: any
+Depends: libfizmo-common,
+ libglkif-common,
+ ${misc:Depends},
+ ${shlibs:Depends}
+Provides: fizmo,
+ zcode-interpreter
+Description: GlkTermW-based Z-machine interpreter for Infocom/Inform games
+ This is a GlkTermW frontend for the fizmo Z-Machine interpreter. It runs
+ Andrew Plotkin's GlkTermW implementation on top of fizmo via fizmo's GLK-
+ interface ("libglkif").
