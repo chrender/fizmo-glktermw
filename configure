@@ -627,6 +627,8 @@ LTLIBOBJS
 LIBOBJS
 ENABLE_TRACING_FALSE
 ENABLE_TRACING_TRUE
+GLKTERMW_NONPKG_LIBS
+GLKTERMW_NONPKG_CFLAGS
 EGREP
 GREP
 CPP
@@ -4918,6 +4920,11 @@ fi
 
 
 
+
+
+GLKTERMW_NONPKG_CFLAGS=$glktermw_nonpkg_cflags
+
+GLKTERMW_NONPKG_LIBS=$glktermw_nonpkg_libs
 
 
  if test "$enable_tracing" = "yes"; then
