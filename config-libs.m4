@@ -99,7 +99,7 @@ AC_CHECK_HEADER([glk.h],
    CFLAGS_SAVED=$CFLAGS
    LIBS_SAVED=$LIBS
    LDFLAGS_SAVED=$LDFLAGS
-   LIBS="-lglktermw"
+   LIBS="-lglktermw $ncursesw_LIBS $glktermw_nonpkg_libs"
    for dir in $with_glktermw_libdir /usr/lib /usr/local/lib ; do
      AC_MSG_CHECKING(for libglktermw in $dir)
      LDFLAGS="-L$dir"
