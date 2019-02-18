@@ -1,6 +1,15 @@
 
 
 
+   **Version 0.2.3 — Febuary 17, 2019**
+
+ - Updated obsolete AC\_TRY\_LINK to AC\_LINK\_IFELSE.
+ - Updated tiny-xml-doc-tools.
+ - Fixed markdown underscores.
+
+---
+
+
    **Version 0.2.2 — September 3, 2017**
 
  - Renamed copyright files to “license” for github license detection compatibility, see [Github's “Licensing a repository”](https://help.github.com/articles/licensing-a-repository/) for further reference.
@@ -60,7 +69,7 @@
 
    **Version 0.1.3 — August 1, 2012**
 
- - Merged with Andrew Plotkin's iOS-fizmo implementation: Moved functionality of “glk_ask_user_for_file” into libglkif.
+ - Merged with Andrew Plotkin's iOS-fizmo implementation: Moved functionality of “glk\_ask\_user\_for\_file” into libglkif.
 
 ---
 
@@ -76,8 +85,8 @@
 
  - Fixed missing “override” statments for CFLAGS in Makefiles.
  - Fixed $(DESTDIR) evaluation in config.[default|macports].mk.
- - Adapted Makefiles and configuration to use standard GNU Makefile variables instead of INSTALL_PATH and FIZMO_BIN_DIR.
- - Respect LD_FLAGS for linking.
+ - Adapted Makefiles and configuration to use standard GNU Makefile variables instead of INSTALL\_PATH and FIZMO\_BIN\_DIR.
+ - Respect LD\_FLAGS for linking.
 
 ---
 

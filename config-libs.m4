@@ -31,11 +31,12 @@ PKG_CHECK_MODULES(
   for dir in $with_ncursesw_libdir /usr/lib /usr/local/lib /opt/local/lib ; do
     AC_MSG_CHECKING(for libncursesw in $dir)
     LDFLAGS="-L$dir"
-    AC_TRY_LINK(
-      [ #define _XOPEN_SOURCE_EXTENDED 1
-        #include <stdio.h>
-        #include "$ncurses_h_dir/ncurses.h"],
-      [ wchar_t buf[2]; addwstr(buf); ],
+    AC_LINK_IFELSE(
+      [AC_LANG_PROGRAM(
+       [[#define _XOPEN_SOURCE_EXTENDED 1
+         #include <stdio.h>
+         #include "$ncurses_h_dir/ncurses.h"]],
+       [[wchar_t buf[2]; addwstr(buf);]])],
       [AC_MSG_RESULT(yes)
        libglkif_ncursesw_l_dir=$dir
        break],
@@ -50,11 +51,12 @@ PKG_CHECK_MODULES(
     for dir in $with_ncurses_libdir /usr/lib /usr/local/lib /opt/local/lib ; do
       AC_MSG_CHECKING(for libncurses in $dir)
       LDFLAGS="-L$dir"
-      AC_TRY_LINK(
-        [ #define _XOPEN_SOURCE_EXTENDED 1
-          #include <stdio.h>
-          #include "$ncurses_h_dir/ncurses.h"],
-        [ wchar_t buf[2]; addwstr(buf); ],
+      AC_LINK_IFELSE(
+        [AC_LANG_PROGRAM(
+         [[#define _XOPEN_SOURCE_EXTENDED 1
+           #include <stdio.h>
+           #include "$ncurses_h_dir/ncurses.h"]],
+         [[wchar_t buf[2]; addwstr(buf);]])],
         [AC_MSG_RESULT(yes)
          libglkif_ncursesw_l_dir=$dir
          break],
@@ -101,13 +103,14 @@ AC_CHECK_HEADER([glk.h],
    for dir in $with_glktermw_libdir /usr/lib /usr/local/lib ; do
      AC_MSG_CHECKING(for libglktermw in $dir)
      LDFLAGS="-L$dir"
-     AC_TRY_LINK(
-       [#include <stdio.h>
-        #include "$glkterm_h_dir/glk.h"
-        #include "$glkterm_h_dir/glkstart.h"],
-       [glkunix_argumentlist_t glkunix_arguments[] = { };
-        int glkunix_startup_code(glkunix_startup_t *data) { }
-        void glk_main(void) { glk_exit(); } ],
+     AC_LINK_IFELSE(
+       [AC_LANG_SOURCE([
+        [#include <stdio.h>
+         #include "$glkterm_h_dir/glk.h"
+         #include "$glkterm_h_dir/glkstart.h"
+         glkunix_argumentlist_t glkunix_arguments[] = { };
+         int glkunix_startup_code(glkunix_startup_t *data) { return 0; }
+         void glk_main(void) { glk_exit(); } ]])],
        [AC_MSG_RESULT(yes)
         glktermw_l_dir=$dir
         break],
