@@ -1,8 +1,9 @@
 
 
 
-   **Version 0.2.3 — Febuary 17, 2019**
+   **Version 0.2.3 — Febuary 19, 2019**
 
+ - Fixed potential compile errors due to relative paths in autoconf parameters.
  - Updated obsolete AC\_TRY\_LINK to AC\_LINK\_IFELSE.
  - Updated tiny-xml-doc-tools.
  - Fixed markdown underscores.

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog>
   <change version="0.2.3">
-    <datetime day-of-week="Sun" month="2" day="17" hour="23"
-      minute="51" second="9" timezone="CET" year="2019"/>
+    <datetime day-of-week="Tue" month="2" day="19" hour="22"
+      minute="34" second="29" timezone="CET" year="2019"/>
+    <logentry>Fixed potential compile errors due to relative paths in autoconf parameters.</logentry>
     <logentry>Updated obsolete AC_TRY_LINK to AC_LINK_IFELSE.</logentry>
     <logentry>Updated tiny-xml-doc-tools.</logentry>
     <logentry>Fixed markdown underscores.</logentry>
